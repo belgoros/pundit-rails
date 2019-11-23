@@ -1,0 +1,20 @@
+<%= form_with(model: post, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <% if policy(post).permitted_attributes.include? :title %>
+      <%= form.text_field :title %>
+    <% else %>
+      <%= form.text_field :title, disabled: true %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
