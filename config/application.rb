@@ -30,6 +30,5 @@ module PunditRails
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.action_controller.action_on_unpermitted_parameters = :raise
-    config.action_dispatch.rescue_responses["Pundit::NotAuthorizedError"] = :forbidden
   end
 end
