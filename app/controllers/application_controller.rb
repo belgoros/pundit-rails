@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
 
   attr_reader :current_user
 
-  #rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-  rescue_from Pundit::NotAuthorizedError, ActionController::UnpermittedParameters, with: :user_not_authorized
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+  #rescue_from Pundit::NotAuthorizedError, ActionController::UnpermittedParameters, with: :user_not_authorized
 
   def current_user
     guest_user

@@ -40,6 +40,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    authorize @post
     respond_to do |format|
       if @post.update_attributes(permitted_attributes(@post))
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
