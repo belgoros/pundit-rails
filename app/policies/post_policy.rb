@@ -1,8 +1,8 @@
 class PostPolicy < ApplicationPolicy
 
-  #def update?
-  #  user.admin? || user.guest?
-  #end
+  def update?
+    user.admin? || user.guest?
+  end
 
   def permitted_attributes
     if user.admin?
